@@ -1,0 +1,38 @@
+
+PasswordAuthentication no
+StrictHostKeyChecking no
+
+host BastionET2598
+hostname 188.95.231.89
+port 22
+user ubuntu
+IdentityFile /home/shiva/.ssh/id_rsa
+PasswordAuthentication no
+
+host devA
+hostname 10.1.0.37
+port 22
+user ubuntu 
+IdentityFile /home/shiva/.ssh/id_rsa
+proxyjump BastionET2598
+
+host devB
+hostname 10.1.0.197
+port 22
+user ubuntu 
+IdentityFile /home/shiva/.ssh/id_rsa
+proxyjump BastionET2598
+
+host devC
+hostname 10.1.0.12
+port 22
+user ubuntu
+IdentityFile /home/shiva/.ssh/id_rsa
+proxyjump BastionET2598
+
+host devhaproxy
+hostname 188.95.226.61
+port 22
+user ubuntu
+IdentityFile /home/shiva/.ssh/id_rsa
+proxyjump BastionET2598
